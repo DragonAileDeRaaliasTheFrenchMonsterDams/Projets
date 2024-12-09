@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Entity;
-
 use App\Repository\GamesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -25,9 +24,9 @@ class Games
     private ?string $GameStatut = null;
 
     /**
-     * @var Collection<int, UserGame>
+     * @var Collection<int, Appartenir>
      */
-    #[ORM\OneToMany(targetEntity: UserGame::class, mappedBy: 'game')]
+    #[ORM\OneToMany(targetEntity: Appartenir::class, mappedBy: 'game')]
     private Collection $gameusers;
 
     /**
@@ -84,14 +83,14 @@ class Games
     }
 
     /**
-     * @return Collection<int, UserGame>
+     * @return Collection<int, Appartenir>
      */
     public function getGameusers(): Collection
     {
         return $this->gameusers;
     }
 
-    public function addGameuser(UserGame $gameuser): static
+    public function addGameuser(Appartenir $gameuser): static
     {
         if (!$this->gameusers->contains($gameuser)) {
             $this->gameusers->add($gameuser);
@@ -101,7 +100,7 @@ class Games
         return $this;
     }
 
-    public function removeGameuser(UserGame $gameuser): static
+    public function removeGameuser(Appartenir $gameuser): static
     {
         if ($this->gameusers->removeElement($gameuser)) {
             // set the owning side to null (unless already changed)

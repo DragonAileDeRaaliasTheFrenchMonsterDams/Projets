@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\UserGameRepository;
+use App\Repository\AppartenirRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: UserGameRepository::class)]
-class UserGame
+#[ORM\Entity(repositoryClass: AppartenirRepository::class)]
+class Appartenir
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class BluffandTellController extends AbstractController
+class LoginController extends AbstractController
 {
-    #[Route('/', name: 'app_bluffandtell')]
+    #[Route('/login', name: 'app_login')]
     public function index(): Response
     {
-        return $this->render('bluffand_tell/home.html.twig', [
-            'controller_name' => 'BluffandTellController',
+        return $this->render('login/index.html.twig', [
+            'controller_name' => 'LoginController',
         ]);
     }
 }
